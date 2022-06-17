@@ -1,4 +1,4 @@
-package com.puteriyudani.jasaonline
+package com.puteriyudani.jasaonline.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +11,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.puteriyudani.jasaonline.BerandaFragment
+import com.puteriyudani.jasaonline.JasaFragment
+import com.puteriyudani.jasaonline.ProfileFragment
+import com.puteriyudani.jasaonline.R
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toolbar: Toolbar
