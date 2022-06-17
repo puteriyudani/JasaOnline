@@ -15,4 +15,8 @@
     <color name="secondary_text">#757575</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
+    <color name="teal">#069A8E</color>
+    <color name="teal_dark">#005555</color>
+    <color name="teal_light">#A1E3D8</color>
+    <color name="yellow_light">#F7FF93</color>
 </resources>
