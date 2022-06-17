@@ -19,4 +19,14 @@
     <color name="teal_dark">#005555</color>
     <color name="teal_light">#A1E3D8</color>
     <color name="yellow_light">#F7FF93</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorPrimaryLight">#C8E6C9</color>
+    <color name="colorAccent">#009688</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorIcons">#FFFFFF</color>
+    <color name="colorDivider">#BDBDBD</color>
+    <color name="colorAzure">#f1f5f8</color>
+    <color name="colorGray">#f2f2f2</color>
 </resources>

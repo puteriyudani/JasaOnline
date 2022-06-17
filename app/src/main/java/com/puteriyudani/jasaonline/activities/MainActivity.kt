@@ -11,10 +11,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import com.puteriyudani.jasaonline.BerandaFragment
-import com.puteriyudani.jasaonline.JasaFragment
-import com.puteriyudani.jasaonline.ProfileFragment
 import com.puteriyudani.jasaonline.R
+import com.puteriyudani.jasaonline.fragments.BerandaFragment
+import com.puteriyudani.jasaonline.fragments.JasaFragment
+import com.puteriyudani.jasaonline.fragments.ProfileFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var toolbar: Toolbar

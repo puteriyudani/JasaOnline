@@ -15,4 +15,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Variabel Splash Screen -->
     <string name="icon_url">https://www.flaticon.com</string>
+    <!-- Form Login -->
+    <string name="judul_activity_login">Masuk</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="judul_daftar">Tidak punya akun? <b>Daftar</b></string>
+    <string name="lupa_password">Lupa <b>password?</b></string>
+    <string name="atau_login">Atau login dengan</string>
 </resources>
