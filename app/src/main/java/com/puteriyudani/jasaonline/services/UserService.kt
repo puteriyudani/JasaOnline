@@ -2,8 +2,7 @@ package com.puteriyudani.jasaonline.services
 
 import com.puteriyudani.jasaonline.models.LoginResponse
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.QueryMap
+import retrofit2.http.*
 
 interface UserService {
     @GET("login")
