@@ -60,4 +60,12 @@
     <string name="design_grafis">Design Grafis</string>
     <string name="deskripsi_ringkas">Menyediakan jasa design grafis (logo, poster, dll)</string>
     <string name="rating">4</string>
+
+    <!--form detail jasa-->
+    <string name="nama_jasa">Nama Jasa</string>
+    <string name="penyedia">Penyedia</string>
+    <string name="kontak">Kontak</string>
+    <string name="newrating">Rating</string>
+    <string name="deskripsi_singkat">Deskripsi Singkat</string>
+    <string name="uraian_deskripsi">Uraian Deskripsi</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.puteriyudani.jasaonline.fragments
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +11,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.puteriyudani.jasaonline.R
+import com.puteriyudani.jasaonline.activities.DetailJasaActivity
 import com.puteriyudani.jasaonline.adapters.JasaAdapter
+import com.puteriyudani.jasaonline.helpers.Config
 import com.puteriyudani.jasaonline.models.Jasa
 import com.puteriyudani.jasaonline.models.JasaResponse
 import com.puteriyudani.jasaonline.services.JasaService
@@ -76,7 +79,11 @@ class BerandaFragment : Fragment() {
                         val daftarJasa: List<Jasa> = jasaResponse.data
                         val jasaAdapter = JasaAdapter(daftarJasa) {
                                 service ->
-                            Toast.makeText(context, "service clicked ${service.namaJasa}", Toast.LENGTH_SHORT).show()
+                            //Toast.makeText(context, "service clicked ${service.namaJasa}", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(context,
+                                DetailJasaActivity::class.java)
+                            intent.putExtra(Config.EXTRA_JASA, service)
+                            startActivity(intent)
                         }
                         jasaAdapter.notifyDataSetChanged()
                         rvData.adapter = jasaAdapter
