@@ -8,8 +8,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ServiceBuilder {
+    //create logger
+    private val logger: HttpLoggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+
     //create okhttp client
     private val okHttp: OkHttpClient.Builder = OkHttpClient.Builder()
+            .callTimeout(5, TimeUnit.SECONDS)
+            .addInterceptor(logger)
 
     //create retrofit builder
     private val builder: Retrofit.Builder =
