@@ -65,6 +65,12 @@ class LoginActivity : AppCompatActivity() {
                 }
             })
         }
+
+        tvDaftar.setOnClickListener {
+            val intent = Intent(applicationContext,
+                RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun loadMainActivity() {

@@ -23,4 +23,16 @@
     <string name="judul_daftar">Tidak punya akun? <b>Daftar</b></string>
     <string name="lupa_password">Lupa <b>password?</b></string>
     <string name="atau_login">Atau login dengan</string>
+    <!--form register-->
+    <string name="nama">Nama</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <array name="jenis_kelamin">
+        <item>Jenis Kelamin</item>
+        <item>Pria</item>
+        <item>Wanita</item>
+    </array>
+    <string name="no_hp">Nomor HP</string>
+    <string name="alamat">Alamat</string>
+    <string name="konfirmasi_password">Konfirmasi Password</string>
+    <string name="submit">Submit</string>
 </resources>

@@ -16,7 +16,7 @@
         android:layout_height="75dp"
         app:srcCompat="@drawable/icon"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/me"
+        android:src="@mipmap/ic_launcher"
         android:contentDescription="@string/image_header" />
     <TextView
         android:id="@+id/tvNamaHeader"
