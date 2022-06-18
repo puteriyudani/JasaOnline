@@ -40,8 +40,8 @@ class RegisterActivity : AppCompatActivity() {
             }
             if(jenisKelamin.equals("Jenis Kelamin")){
                 Toast.makeText(applicationContext, "Silahkan pilih jenis kelamin!", Toast.LENGTH_SHORT).show()
-                        spJenisKelamin.requestFocus()
-                    return@setOnClickListener
+                spJenisKelamin.requestFocus()
+                return@setOnClickListener
             }
             if(TextUtils.isEmpty(nomorHP)){
                 etNomorHP.error = "Nomor HP tidak boleh kosong!"
