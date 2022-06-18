@@ -21,4 +21,9 @@ interface UserService {
     fun updateUser(
         @Body updatedUser: User
     ): Call<DefaultResponse>
+
+    @DELETE("users/{id}")
+    fun deleteUser(
+        @Path("id") id: Int
+    ): Call<DefaultResponse>
 }
