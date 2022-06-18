@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.puteriyudani.jasaonline.R
 import com.puteriyudani.jasaonline.helpers.Config
+import com.puteriyudani.jasaonline.helpers.SessionHandler
 import com.puteriyudani.jasaonline.models.LoginResponse
 import com.puteriyudani.jasaonline.models.User
 import com.puteriyudani.jasaonline.services.ServiceBuilder
@@ -18,6 +19,12 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val session = SessionHandler(applicationContext)
+        if(session.isLoggedIn()){
+            loadMainActivity();
+        }
+
         setContentView(R.layout.activity_login)
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString()
@@ -48,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
                         val loginResponse: LoginResponse? = response.body()
                         loginResponse?.let {
                             val user: User = loginResponse.data
+                            session.saveUser(user)
                             Toast.makeText(this@LoginActivity, "Pengguna ${user.nama} dengan email ${user.email} berhasil login!", Toast.LENGTH_LONG).show()
                             loadMainActivity()
                         }
