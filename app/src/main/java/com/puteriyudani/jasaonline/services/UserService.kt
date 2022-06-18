@@ -16,4 +16,9 @@ interface UserService {
     fun registerUser(
         @Body newUser: User
     ): Call<DefaultResponse>
+
+    @PUT("users")
+    fun updateUser(
+        @Body updatedUser: User
+    ): Call<DefaultResponse>
 }

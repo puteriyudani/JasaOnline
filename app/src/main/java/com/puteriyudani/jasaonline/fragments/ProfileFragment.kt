@@ -1,12 +1,14 @@
 package com.puteriyudani.jasaonline.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.puteriyudani.jasaonline.R
+import com.puteriyudani.jasaonline.activities.EditProfileActivity
 import com.puteriyudani.jasaonline.helpers.SessionHandler
 import com.puteriyudani.jasaonline.models.User
 import kotlinx.android.synthetic.main.fragment_profile.view.*
@@ -44,6 +46,11 @@ class ProfileFragment : Fragment() {
             view.tvAlamat.text = titikDua + user.alamat
             view.tvEmail.text = titikDua + user.email
             view.tvWaktuSesi.text = titikDua + session.getExpireTime()
+        }
+
+        view.btnEditProfil.setOnClickListener {
+            val intent = Intent(context, EditProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 }
