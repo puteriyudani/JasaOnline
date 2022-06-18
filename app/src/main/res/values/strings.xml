@@ -55,4 +55,9 @@
 
     <!--form edit profile-->
     <string name="judul_password">Silahkan kosongkan password, jika tidak mau mengubahnya!</string>
+
+    <!--jasa list-->
+    <string name="design_grafis">Design Grafis</string>
+    <string name="deskripsi_ringkas">Menyediakan jasa design grafis (logo, poster, dll)</string>
+    <string name="rating">4</string>
 </resources>
