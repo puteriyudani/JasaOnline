@@ -3,6 +3,8 @@ package com.puteriyudani.jasaonline.services
 import com.puteriyudani.jasaonline.models.DefaultResponse
 import com.puteriyudani.jasaonline.models.LoginResponse
 import com.puteriyudani.jasaonline.models.User
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 

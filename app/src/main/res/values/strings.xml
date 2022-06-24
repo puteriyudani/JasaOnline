@@ -75,4 +75,9 @@
     <string name="cari">Cari</string>
     <string name="pilih_gambar">Pilih sebuah gambar!</string>
     <string name="tambah_jasa">&#160;Tambah Jasa&#160;</string>
+
+    <!--form edit jasa-->
+    <string name="judul_rating"><i>Rating = </i></string>
+    <string name="edit_jasa">Ubah Jasa</string>
+    <string name="hapus_jasa">Hapus Jasa</string>
 </resources>

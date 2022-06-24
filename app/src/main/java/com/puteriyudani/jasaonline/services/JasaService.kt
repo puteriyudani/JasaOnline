@@ -27,4 +27,23 @@ interface JasaService {
         @Part("rating") rating: RequestBody,
         @Part("gambar") gambar: RequestBody
     ) : Call<DefaultResponse>
+
+    @Multipart
+    @PUT("services")
+    fun editJasaReplaceImage(
+        @Part image: MultipartBody.Part,
+        @Part("id_jasa") idJasa: RequestBody,
+        @Part("nama_jasa") namaJasa: RequestBody,
+        @Part("deskripsi_singkat") deskripsiSingkat: RequestBody,
+        @Part("uraian_deskripsi") uraianDeskripsi: RequestBody,
+        @Part("gambar") gambar: RequestBody
+    ) : Call<DefaultResponse>
+    @FormUrlEncoded
+    @PUT("services/{id_jasa}")
+    fun editJasa(
+        @Path("id_jasa") idJasa: Int,
+        @Field("nama_jasa") namaJasa: String,
+        @Field("deskripsi_singkat") deskripsiSingkat: String,
+        @Field("uraian_deskripsi") uraianDeskripsi: String
+    ): Call<DefaultResponse>
 }

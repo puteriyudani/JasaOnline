@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.puteriyudani.jasaonline.R
 import com.puteriyudani.jasaonline.activities.AddJasaActivity
+import com.puteriyudani.jasaonline.activities.EditJasaActivity
 import com.puteriyudani.jasaonline.adapters.JasaAdapter
+import com.puteriyudani.jasaonline.helpers.Config
 import com.puteriyudani.jasaonline.helpers.SessionHandler
 import com.puteriyudani.jasaonline.models.Jasa
 import com.puteriyudani.jasaonline.models.JasaResponse
@@ -41,6 +43,7 @@ class JasaFragment : Fragment() {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
         }
+        // memberikan listener onClick pada fabMain, saat diclick maka akan pindah ke activity Upload.
         view.fabAddJasa.setOnClickListener {
             val intent = Intent(context, AddJasaActivity::class.java)
             startActivity(intent)
@@ -77,7 +80,11 @@ class JasaFragment : Fragment() {
                             serveicesResponse.data
                         val jasaAdapter = JasaAdapter(daftarJasa) {
                                 service ->
-                            Toast.makeText(context, "service clicked${service.namaJasa}", Toast.LENGTH_SHORT).show()
+                            //Toast.makeText(context, "service clicked ${service.namaJasa}", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(context,
+                                EditJasaActivity::class.java)
+                            intent.putExtra(Config.EXTRA_JASA, service)
+                            startActivity(intent)
                         }
                         jasaAdapter.notifyDataSetChanged()
                         rvData.adapter = jasaAdapter
