@@ -39,6 +39,7 @@ interface JasaService {
         @Part("gambar") gambar: RequestBody
     ) : Call<DefaultResponse>
     @FormUrlEncoded
+
     @PUT("services/{id_jasa}")
     fun editJasa(
         @Path("id_jasa") idJasa: Int,
@@ -46,4 +47,9 @@ interface JasaService {
         @Field("deskripsi_singkat") deskripsiSingkat: String,
         @Field("uraian_deskripsi") uraianDeskripsi: String
     ): Call<DefaultResponse>
+
+    @DELETE("services/{id_jasa}")
+    fun deleteJasa(
+        @Path("id_jasa") idJasa: Int
+    ) : Call<DefaultResponse>
 }

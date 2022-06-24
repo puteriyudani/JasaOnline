@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.puteriyudani.jasaonline.R
 import com.puteriyudani.jasaonline.helpers.Config
@@ -163,6 +164,49 @@ class EditJasaActivity : AppCompatActivity() {
                     }
                 })
             }
+        }
+
+        btnHapusJasa.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Hapus Jasa")
+            builder.setMessage("Apakah anda yakin menghapus jasa?\n${receiveJasa?.namaJasa}")
+            builder.setIcon(R.drawable.ic_baseline_delete_forever_black_24)
+            builder.setPositiveButton("Ya"){dialog, _ ->
+                val jasaService: JasaService =
+                    ServiceBuilder.buildService(JasaService::class.java)
+                val requestCall: Call<DefaultResponse> =
+                    jasaService.deleteJasa(receiveJasa?.idJasa!!)
+                requestCall.enqueue(object:
+                    retrofit2.Callback<DefaultResponse>{
+                    override fun onFailure(call: Call<DefaultResponse>, t:
+                    Throwable) {
+                        Toast.makeText(this@EditJasaActivity, "Error terjadi ketika sedang menghapus jasa: " + t.toString(),
+                            Toast.LENGTH_LONG).show()
+                    }
+                    override fun onResponse(
+                        call: Call<DefaultResponse>,
+                        response: Response<DefaultResponse>
+                    ) {
+                        if(!response.body()?.error!!) {
+                            val defaultResponse: DefaultResponse =
+                                response.body()!!
+                            defaultResponse.let {
+                                Toast.makeText(this@EditJasaActivity,
+                                    defaultResponse.message, Toast.LENGTH_LONG).show()
+                                openMain()
+                            }
+                        }else{
+                            Toast.makeText(this@EditJasaActivity, "Gagal menghapus jasa: " + response.body()?.message, Toast.LENGTH_LONG).show()
+                        }
+                    }
+                })
+                dialog.dismiss()
+            }
+            builder.setNegativeButton("Tidak"){dialog, _ ->
+                dialog.dismiss()
+            }
+            val alertDialog: AlertDialog = builder.create()
+            alertDialog.show()
         }
     }
     // override method onActivityResult untuk handling data dari pickImageActivity.
