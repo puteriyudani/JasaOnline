@@ -68,4 +68,11 @@
     <string name="newrating">Rating</string>
     <string name="deskripsi_singkat">Deskripsi Singkat</string>
     <string name="uraian_deskripsi">Uraian Deskripsi</string>
+
+    <!--form add jasa-->
+    <string name="default_rating"><i>Default Rating = </i></string>
+    <string name="nol"><i>0</i></string>
+    <string name="cari">Cari</string>
+    <string name="pilih_gambar">Pilih sebuah gambar!</string>
+    <string name="tambah_jasa">&#160;Tambah Jasa&#160;</string>
 </resources>

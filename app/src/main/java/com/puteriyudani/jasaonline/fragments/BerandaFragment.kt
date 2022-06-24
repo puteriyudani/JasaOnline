@@ -22,16 +22,7 @@ import kotlinx.android.synthetic.main.fragment_beranda.view.*
 import retrofit2.Call
 import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [BerandaFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BerandaFragment : Fragment() {
     lateinit var rvData: RecyclerView
     override fun onCreateView(
@@ -77,8 +68,8 @@ class BerandaFragment : Fragment() {
                     val jasaResponse: JasaResponse? = response.body()
                     jasaResponse?.let {
                         val daftarJasa: List<Jasa> = jasaResponse.data
-                        val jasaAdapter = JasaAdapter(daftarJasa) {
-                                service ->
+                        val jasaAdapter = JasaAdapter(daftarJasa) { service
+                            ->
                             //Toast.makeText(context, "service clicked ${service.namaJasa}", Toast.LENGTH_SHORT).show()
                             val intent = Intent(context,
                                 DetailJasaActivity::class.java)
@@ -89,7 +80,8 @@ class BerandaFragment : Fragment() {
                         rvData.adapter = jasaAdapter
                     }
                 }else{
-                    Toast.makeText(context, "Gagal menampilkan data jasa: " + response.body()?.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Gagal menampilkan data jasa: "
+                            + response.body()?.message, Toast.LENGTH_LONG).show()
                 }
             }
         });

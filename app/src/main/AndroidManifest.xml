@@ -4,6 +4,7 @@
     package="com.puteriyudani.jasaonline">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +17,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
         <activity
+            android:name=".activities.AddJasaActivity"
+            android:label="Menambahkan Jasa"
+            android:parentActivityName=".activities.MainActivity"/>
+        <activity
             android:name=".activities.DetailJasaActivity"
             android:label="Detail Jasa"
-            android:parentActivityName=".activities.MainActivity"/>
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.EditProfileActivity"
             android:label="Ubah Profile"
@@ -32,7 +37,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.SplashScreenActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
